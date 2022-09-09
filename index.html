@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Passion+One&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="jquery-3.6.0.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+  <script src="main.js"></script>
+  <title>CryptoGold</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="title text-center">CryptoGold</h1>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-section="homeSection" id="home">Home
+                <img src="assets/images/coins.png" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-section="reportSection" id="liveDataReports">Live Reports
+                <img src="assets/images/gold-bars.png" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-section="aboutSection" id="about">About
+                <img src="assets/images/white-diamond.png" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <hr />
+    </div>
+  </header>
+
+
+  <audio id="chaChingAudio" src="assets/audio/cha-ching.mp3"></audio>
+  <audio id="coinsAudio" src="assets/audio/coins-fallin.mp3"></audio>
+  <audio id="slotMachineAudio" src="assets/audio/slot-machine.mp3"></audio>
+  <audio id="goldAudio" src="assets/audio/gold.mp3"></audio>
+
+
+  <section id="homeSection">
+    <div class="search">
+      <input class="form-control" type="search" placeholder="Search" />
+      <div class="search-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffd868" class="bi bi-search"
+          viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+      </div>
+    </div>
+
+    <p class="home parallax"></p>
+
+    <div id="coins"></div>
+
+    <div class="modal fade" id="modal" role="dialog" data-bs-keyboard="false" data-bs-backdrop="static">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">You can select only 5 coins, please unselect one of the following:</h5>
+            <div class="close fs-4" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div id="selectedCoins"></div>
+          </div>
+          <div class="modal-footer">
+            <button class='btn' id="cancel" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="reportSection">
+    <div id="liveData"></div>
+  </section>
+
+
+  <section id="aboutSection">
+    <div class="about-img"></div>
+
+    <div class="about-text fs-4">
+      <p>
+        This project is a single page application that provides information and reports from the virtual trade world.
+        The world of virtual commerce has become very popular in recent years, at the same time a variety of APIs have
+        been created
+        that provide free information about virtual coins.
+      </p>
+      <ul>
+        <li>
+          <b>Home tab</b> displays 50 most popular currencies using the most comprehensive Cryptocurrency API
+          <a href="https://www.coingecko.com/en/api#/">CoinGecko</a> - powered by the world’s largest independent crypto
+          data aggregator.<br />
+          A More Info button to get the bitcoin in dollars, euros and shekels.<br />
+          And a switch to add (up to 5) currencies to the list of Live Reports.
+        </li>
+        <br />
+        <li>
+          <b>Live Reports tab</b> displays a graph describing the state of the (selected by the switch buttons)
+          currencies in real time.
+          Using THE PREMIUM {API} SOLUTION <a href="https://min-api.cryptocompare.com/">CryptoCompare</a> - world's
+          leading digital asset
+          data company.<br />
+          The graph uses chart with multiple axes to display several currencies coin price in dollars together, and
+          updates every 2 seconds.
+        </li>
+      </ul>
+      <br />
+      <p>
+        <b>About me:</b><br />
+        My name is Nofar.<br />
+        I am <span id="age"></span> years old.<br />
+        I have a beautiful white Pekingese.<br />
+        And a BIG bike.<br /><br />
+        <img src="assets/images/GSX.png" />
+      </p>
+    </div>
+  </section>
+
+</body>
+
+</html>
