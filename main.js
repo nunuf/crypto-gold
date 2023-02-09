@@ -110,7 +110,7 @@ $(() => {
   // Get and display coins
   const handleCoins = async () => {
     try {
-      const coins = await getJSON('https://api.coingecko.com/api/v3/coins');
+      const coins = await getJSON('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true');
       saveToLocalStorage('coins', coins);
       displayCoins('coins', coins);
       deleteFromLocalStorage('selectedCoins');
@@ -140,7 +140,7 @@ $(() => {
         </div>
         <div>${coin.symbol}</div>
         <div class="fs-5">${coin.name}</div>
-        <div><img src="${coin.image.thumb}" alt=""/></div>
+        <div><img src="${coin.image}" alt=""/></div>
         <button class="btn" data-id="${coin.id}" data-bs-toggle="collapse" data-bs-target="#collapse${coin.id}" aria-expanded="false">More Info</button>
         <div class="collapse" id="collapse${coin.id}">
           <div></div>

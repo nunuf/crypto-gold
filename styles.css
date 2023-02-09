@@ -124,6 +124,10 @@ hr {
   color: var(--black);
 }
 
+.card img {
+  height: 40px;
+}
+
 .loader {
   margin-top: 10px;
   transform: translateZ(1px);
